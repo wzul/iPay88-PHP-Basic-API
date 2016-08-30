@@ -3,7 +3,7 @@
 Generate HTML Form to send to iPay88 API 
 
 # How to use
-
+## Sending user to iPay88 Payment Page
 1. Use **require_once** or **include_once** for iPay88.php file. 
 ###Example: **require_once 'iPay88.php';**
 
@@ -28,6 +28,19 @@ Generate HTML Form to send to iPay88 API
         ->setBackendURL('http://woo.wanzul-hosting.com/igniter/ssa.php')
         ->prepare()
         ->process();
+
+## After user completed the process on iPay88
+1. Use **require_once** or **include_once** for iPay88.php file. 
+###Example: **require_once 'iPay88Callback.php';**
+
+2. Create new object and pass your merchant key
+###Example: **$obj = new iPay88Callback('ABC');**
+
+3. For ResponseURL, call method as example below:
+###Example: **$obj->verifySignature()->getData();**
+
+4. For BackendURL, call method as example below:
+###Example: **$obj->verifySignature()->requeryStatus()->getData();**
 
 # Donate
 
