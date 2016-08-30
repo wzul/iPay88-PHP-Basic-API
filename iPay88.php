@@ -157,7 +157,7 @@ class iPay88 {
 
     public function prepare() {
         $amount = preg_replace("/[^0-9]/", "", $this->array['Amount']);
-        $this->array['Signature'] = $this->iPay88_signature($this->merchantKey . $this->array['MerchantCode'] . $this->array['PaymentId'] . $this->array['RefNo'] . $amount . $this->array['Currency']);
+        $this->array['Signature'] = $this->iPay88_signature($this->merchantKey . $this->array['MerchantCode'] . $this->array['RefNo'] . $amount . $this->array['Currency']);
         return $this;
     }
 
